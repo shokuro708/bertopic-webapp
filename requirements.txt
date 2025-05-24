@@ -1,0 +1,63 @@
+# requirements.txt
+streamlit==1.28.0
+pandas==2.0.3
+numpy==1.24.3
+bertopic==0.15.0
+sentence-transformers==2.2.2
+scikit-learn==1.3.0
+umap-learn==0.5.3
+plotly==5.15.0
+matplotlib==3.7.2
+openai==1.3.0
+requests==2.31.0
+
+# .streamlit/config.toml
+[theme]
+primaryColor = "#FF6B6B"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F0F2F6"
+textColor = "#262730"
+font = "sans serif"
+
+[server]
+maxUploadSize = 200
+enableCORS = false
+enableXsrfProtection = true
+
+# .gitignore
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.env
+*.csv
+*.xlsx
+cache/
+*.pkl
+.streamlit/secrets.toml
+
+# README.md
+# BERTopic Web分析ツール
+
+Streamlitを使用したBERTopicベースのテキスト分析Webアプリケーション
+
+## 機能
+- CSVファイルからのテキスト分析
+- トピックモデリング
+- インタラクティブな可視化
+- 結果のダウンロード
+
+## ローカル実行方法
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+## デプロイ方法
+1. GitHubにプッシュ
+2. Streamlit Cloudでアプリを作成
+3. 自動デプロイ

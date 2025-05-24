@@ -1,0 +1,72 @@
+# Python関連
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 仮想環境
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEとエディタ
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS関連
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Streamlit関連
+.streamlit/secrets.toml
+
+# データファイル（アップロードされたファイル）
+*.csv
+*.xlsx
+*.json
+uploads/
+temp/
+
+# キャッシュ
+.cache/
+*.pkl
+*.pickle
+
+# ログ
+*.log
+
+# 環境変数
+.env
+
+# Hugging Face キャッシュ
+.cache/huggingface/
+
+# 一時ファイル
+temp*
+tmp*
