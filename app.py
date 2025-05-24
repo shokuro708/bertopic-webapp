@@ -129,6 +129,9 @@ with tab1:
                     st.error(f"❌ エラーが発生しました: {str(e)}")
                     progress_bar.empty()
                     status_text.empty()
+        
+        except Exception as e:
+            st.error(f"❌ ファイル読み込みエラー: {str(e)}")
 
 with tab2:
     st.header("分析結果の可視化")
@@ -170,7 +173,7 @@ with tab2:
         # クラスター別キーワード
         st.subheader("🔤 各クラスターの特徴キーワード")
         
-        for cluster_id in range(n_clusters):
+        for cluster_id in range(len(set(results['clusters']))):
             with st.expander(f"クラスター {cluster_id} の詳細"):
                 cluster_docs = results['tfidf_matrix'][results['clusters'] == cluster_id]
                 if cluster_docs.shape[0] > 0:
@@ -186,7 +189,8 @@ with tab2:
                     sample_indices = np.where(results['clusters'] == cluster_id)[0][:3]
                     st.write("**サンプル文書**:")
                     for i, idx in enumerate(sample_indices):
-                        st.write(f"{i+1}. {results['texts'][idx][:200]}...")
+                        if idx < len(results['texts']):
+                            st.write(f"{i+1}. {results['texts'][idx][:200]}...")
         
         # 結果ダウンロード
         st.subheader("💾 結果ダウンロード")
